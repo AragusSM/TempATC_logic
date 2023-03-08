@@ -6,19 +6,21 @@ using UnityEngine;
 public class Airplane : MonoBehaviour
 {
     public string _flightName;  // flight identifier
-    public bool _departure;     // true if airplane is departing, false if airplane is arriving
     public PlaneStatus status;  // status of this plane
     
     // airplane initialization
-    void Start() {
+    /*void Start() {
         status = PlaneStatus.Terminal;
-    }
+    }*/
 }
 
 // enum of airplane statuses
 public enum PlaneStatus {
-    Terminal,
-    Taxiing,
-    Runway,
-    TakingOff
+    Terminal, //at the terminal, generated from terminal
+    Taxiing, //going from the terminal to the runway
+    Runway, //on the runway
+    TakingOff, //leaving the runway into the air
+    Circling, //in the air ready to land
+    Landing, // landing from air to runway
+    Returning // going back to terminal from runway after landing
 }
